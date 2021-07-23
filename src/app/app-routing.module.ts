@@ -6,7 +6,7 @@ import { PageNotFoundComponent } from './components/shared/page-not-found/page-n
 const routes: Routes = [
   { path: '', redirectTo: '/news', pathMatch: 'full' },
   { path: 'news', component: NewsComponent },
-  // { path: 'register', component: RegisterComponent },
+  { path: 'tools', component: NewsComponent },
   // { path: 'shop', component: ShoppingCartComponent },
   // { path: 'productDetails', component: ProductDetailsComponent },
   { path: '**', component: PageNotFoundComponent },

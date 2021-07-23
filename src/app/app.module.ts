@@ -9,6 +9,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { NavComponent } from './components/shared/nav/nav.component';
 import { PageNotFoundComponent } from './components/shared/page-not-found/page-not-found.component';
 import { NewsComponent } from './components/news/news.component';
+import { FxOrderRatesComponent } from './components/fx-order-rates/fx-order-rates.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NewsComponent } from './components/news/news.component';
     FooterComponent,
     PageNotFoundComponent,
     NewsComponent,
+    FxOrderRatesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

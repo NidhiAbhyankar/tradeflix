@@ -10,7 +10,8 @@ export class NewsService {
 
   getNewsData() {
     return this.http.get(
-      'https://newsapi.org/v2/sources?language=en&apiKey=' + this.api_key
+      'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' +
+        this.api_key
     );
   }
 }
