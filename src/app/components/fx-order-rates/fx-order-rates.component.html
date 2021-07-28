@@ -18,6 +18,7 @@
     </tbody>
   </table>
 </div> -->
+
 <h2 align="center">Latest Currency Rates</h2>
 <h6 align="center">Base Currency: {{ baseCurrency }}</h6>
 <h6 align="center">Date: {{ dateValueLatest }}</h6>
@@ -25,7 +26,10 @@
 <br />
 
 <div class="container">
-  <table class="table table-bordered table-striped">
+  <table
+    class="table table-bordered table-striped"
+    style="background-color: white"
+  >
     <thead>
       <tr>
         <th>Quote Currency</th>
@@ -56,7 +60,10 @@
 <br />
 
 <div class="container">
-  <table class="table table-bordered table-striped">
+  <table
+    class="table table-bordered table-striped"
+    style="background-color: white"
+  >
     <thead>
       <tr>
         <th>Quote Currency</th>
@@ -76,26 +83,35 @@
   </table>
 </div>
 
-<!-- <div class="container">
-  <button class="btn" type="button" name="button" (click)="getData()">
-    <span>Get rates</span>
-  </button>
-  &nbsp;&nbsp;
-  <table class="table table-bordered table-striped">
-    <caption>
-      <h3>Rates for {{ data["base"] }}</h3>
-    </caption>
+<br />
+<br />
+
+<h2 align="center">EUR equivalent of Crypto Currency Coins</h2>
+<hr />
+<br />
+<div *ngIf="cryptos" class="container">
+  <table
+    class="table table-bordered table-striped"
+    style="background-color: white"
+  >
     <thead>
       <tr>
-        <th>Currency</th>
-        <th>Exchange Rate</th>
+        <th>Crypto Currencies</th>
+        <th>Price</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let key of keys">
-        <td>{{ key }}</td>
-        <td>{{ rates[key] }}</td>
+      <tr *ngFor="let crypto of objectKeys(cryptos)">
+        <td>
+          <span>{{ crypto }}</span>
+        </td>
+        <td>
+          <span>{{ cryptos[crypto].EUR | currency: "EUR":true }}</span>
+        </td>
       </tr>
     </tbody>
   </table>
-</div> -->
+</div>
+
+<br />
+<a routerLink="/" style="color: whitesmoke">Go Back to Home</a>

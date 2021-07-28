@@ -1,0 +1,28 @@
+h2 {
+  color: rgb(192, 238, 232);
+  text-shadow: 2px 2px black;
+}
+h6 {
+  color: rgb(192, 238, 232);
+}
+
+.container {
+  overflow: auto;
+}
+table {
+  height: 100px;
+  opacity: 0.7;
+}
+th {
+  color: black;
+  font-size: large;
+  /* text-shadow: 9px 9px white; */
+  font-weight: bolder;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  color: black;
+  font-weight: 600;
+}

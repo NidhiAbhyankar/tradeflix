@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root',
@@ -7,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class FxOrderRatesService {
   //access_key = 'b448b99a5cd5fda37967a50965d3a839';
   api_key = 'e6d65d678107395eefb3e90124160953';
+  result: any;
   constructor(private http: HttpClient) {}
 
   getAvailableCurrencies() {
@@ -29,24 +31,19 @@ export class FxOrderRatesService {
     );
   }
 
-  // getConvertedRates() {
-  //   return this.http.get(
-  //     'https://api.currencylayer.com/list?access_key=' + this.api_key
-  //   );
-  // }
+  getCryptoPrices() {
+    return this.http
+      .get(
+        'https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,IOT,MATIC,ETC,THETA,ICP,VETLUNA,GRT,HOT,TEL,RUNE&tsyms=EUR'
+      )
+      .map((result) => (this.result = result));
+  }
 
-  // latestRates(base: string = 'USD'): Promise<any> {
-  //   console.log(
-  //     'http://api.currencylayer.com/live?access_key=' +
-  //       this.access_key +
-  //       '&currencies = USD,AUD,CAD,PLN,MXN &format = 1'
-  //   );
+  // getDailyPairOHLCV() {
   //   return this.http
   //     .get(
-  //       'http://api.currencylayer.com/live?access_key=' +
-  //         this.access_key +
-  //         '&currencies = USD,AUD,CAD,PLN,MXN &format = 1'
+  //       'https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=30&aggregate=3&e=CCCAGG'
   //     )
-  //     .toPromise();
+  //     .map((result) => (this.result = result));
   // }
 }

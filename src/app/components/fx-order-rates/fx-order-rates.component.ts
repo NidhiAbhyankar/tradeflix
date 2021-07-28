@@ -10,15 +10,20 @@ export class FxOrderRatesComponent implements OnInit {
   availableCurrencies!: Array<any>;
   fxOrderData!: Array<any>;
   historicalData!: Array<any>;
+  cryptoData!: Array<any>;
+
   baseCurrency: any;
   dateValueLatest: any;
   dateValueHistorical: any;
+  objectKeys = Object.keys;
+  cryptos: any;
   constructor(private fxOrderRatesService: FxOrderRatesService) {}
 
   ngOnInit(): void {
     this.availableCurrency();
     this.latestCurrency();
     this.historicalRates();
+    this.cryptoPrices();
   }
 
   availableCurrency() {
@@ -44,12 +49,19 @@ export class FxOrderRatesComponent implements OnInit {
 
   historicalRates() {
     this.fxOrderRatesService.getHistoricalRates().subscribe((data) => {
-      //console.log(data);
       this.historicalData = Object.values(data);
       this.baseCurrency = this.historicalData[3];
       this.dateValueHistorical = this.historicalData[4];
-      //console.log(this.historicalData);
+
       this.historicalData = this.historicalData[5];
+    });
+  }
+
+  cryptoPrices() {
+    this.fxOrderRatesService.getCryptoPrices().subscribe((res) => {
+      //this.cryptoData = Object.values(res);
+      this.cryptos = res;
+      //console.log(res);
     });
   }
 }
