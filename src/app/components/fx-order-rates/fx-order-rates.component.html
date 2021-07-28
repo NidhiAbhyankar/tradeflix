@@ -1,1 +1,101 @@
-<p>fx-order-rates works!</p>
+<!-- <div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Full Form</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of availableCurrencies | keyvalue">
+        <td>
+          <span>{{ item.key }}</span>
+        </td>
+        <td>
+          <span>{{ item.value }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<h2 align="center">Latest Currency Rates</h2>
+<h6 align="center">Base Currency: {{ baseCurrency }}</h6>
+<h6 align="center">Date: {{ dateValueLatest }}</h6>
+<hr />
+<br />
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Quote Currency</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of fxOrderData | keyvalue">
+        <td>
+          <span>{{ item.key }}</span>
+        </td>
+        <td>
+          <span>{{ item.value }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br />
+<br />
+
+<h2 align="center">Historical Currency Rates</h2>
+<br />
+<h6 align="center">Base Currency: {{ baseCurrency }}</h6>
+<h6 align="center">Date: {{ dateValueHistorical }}</h6>
+<hr />
+<br />
+
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Quote Currency</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of historicalData | keyvalue">
+        <td>
+          <span>{{ item.key }}</span>
+        </td>
+        <td>
+          <span>{{ item.value }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div class="container">
+  <button class="btn" type="button" name="button" (click)="getData()">
+    <span>Get rates</span>
+  </button>
+  &nbsp;&nbsp;
+  <table class="table table-bordered table-striped">
+    <caption>
+      <h3>Rates for {{ data["base"] }}</h3>
+    </caption>
+    <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Exchange Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of keys">
+        <td>{{ key }}</td>
+        <td>{{ rates[key] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
