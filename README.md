@@ -1,3 +1,8 @@
+A website which displays information regarding exchange rates of currency, latest currency,historical
+currency,crypto currency coin rates and also the latest news.
+
+
+
 # Tradeflix
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
